@@ -122,3 +122,36 @@ Fri 21 Mar 2025 10:08:56 PM UTC:
  tests:  4|1
 total_score: 50/70
 541d2a0
+Fri 21 Mar 2025 10:24:45 PM UTC: 
+ exercises.c | 24 ++++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:128:13: error: ‘tope’ undeclared (first use in this function); did you mean ‘top’?
+  128 |          if(tope == NULL) return 0;// significa que no ingreso ningun parentesis.
+      |             ^~~~
+      |             top
+exercises.c:128:13: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:129:30: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  129 |          if(cadena[k] == ')' && *elemento != '(' ||cadena[k] == '[' && *elemento != ']' ||cadena[k] == '{' && *elemento != '}')return 0; // si el elemento de la pila es distinto al parentesis del caracter que se esta evaluando no es balanceado.
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+exercises.c:129:108: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  129 |          if(cadena[k] == ')' && *elemento != '(' ||cadena[k] == '[' && *elemento != ']' ||cadena[k] == '{' && *elemento != '}')return 0; // si el elemento de la pila es distinto al parentesis del caracter que se esta evaluando no es balanceado.
+      |                                                                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+exercises.c: At top level:
+exercises.c:133:1: error: expected identifier or ‘(’ before ‘if’
+  133 | if(top(pila) == NULL)return 1;// significa que verifico todos los datos guardados en la pila y no queda ninguno por revisar, y que por lo tanto es balanceado.
+      | ^~
+exercises.c:134:1: error: expected identifier or ‘(’ before ‘return’
+  134 | return 0;// no es balanceado.
+      | ^~~~~~
+exercises.c:135:1: error: expected identifier or ‘(’ before ‘}’ token
+  135 | }
+      | ^
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:132:7: error: control reaches end of non-void function [-Werror=return-type]
+  132 |       }
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+81ac295
