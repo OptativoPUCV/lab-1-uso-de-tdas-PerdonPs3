@@ -99,3 +99,14 @@ exercises.c:104:10: error: ‘dato’ undeclared (first use in this function)
 exercises.c:104:10: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 d64cd88
+Fri 21 Mar 2025 09:24:29 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:107:7: error: ‘dato’ undeclared (first use in this function)
+  107 |       dato = pop(aux);
+      |       ^~~~
+exercises.c:107:7: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+b6c710f
