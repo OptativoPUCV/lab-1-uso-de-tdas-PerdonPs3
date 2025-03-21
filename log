@@ -88,3 +88,14 @@ Fri 21 Mar 2025 09:21:20 PM UTC:
  tests:  3|2
 total_score: 40/70
 6dd5932
+Fri 21 Mar 2025 09:24:06 PM UTC: 
+ exercises.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:104:10: error: ‘dato’ undeclared (first use in this function)
+  104 |    while(dato != NULL){
+      |          ^~~~
+exercises.c:104:10: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+d64cd88
