@@ -76,13 +76,13 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-   int* elemento = first(L);
+   int* elemento = first(L);// guardamos una variable centinela.
    while(elemento != NULL){
-      if(*elemento == elem){
-         popCurrent(L);
-         elemento = first(L);
+      if(*elemento == elem){// si el elemento de la lista es igual al dato a eliminar.
+         popCurrent(L);// se elimina de la lista.
+         elemento = first(L);// actualizamos el elemento.
       }
-      else elemento = next(L);
+      else elemento = next(L);// sigue con el siguiente de la lista.
    }
 }
 
@@ -94,17 +94,17 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
-   Stack* aux = create_stack();
+   Stack* aux = create_stack();// se crea pila auxiliar.
    
-   while(top(P1) != NULL){
-      push(aux, top(P1));
-      pop(P1);
+   while(top(P1) != NULL){// mientras la pila no este vacia.
+      push(aux, top(P1));// guardamos los datos en el auxiliar.
+      pop(P1);// eliminamos el dato de la pila.
    }
    
-   while(top(aux) != NULL){
-      push(P2, top(aux));
-      push(P1, top(aux));
-      pop(aux);
+   while(top(aux) != NULL){// mientras el auxiliar no este vacio.
+      push(P2, top(aux));// guardamos los datos de auxiliar en la pila 2.
+      push(P1, top(aux));// guardamos los datos de auxiliar en la pila 1.
+      pop(aux);// borramos los datos de auxiliar.
    }
 }
 
