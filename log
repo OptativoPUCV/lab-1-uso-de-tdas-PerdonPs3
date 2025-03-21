@@ -239,3 +239,23 @@ exercises.c:132:7: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 85ef02c
+Fri 21 Mar 2025 10:38:34 PM UTC: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c:133:1: error: expected identifier or ‘(’ before ‘if’
+  133 | if(top(pila) == NULL)return 1;
+      | ^~
+exercises.c:134:1: error: expected identifier or ‘(’ before ‘return’
+  134 | return 0;
+      | ^~~~~~
+exercises.c:135:1: error: expected identifier or ‘(’ before ‘}’ token
+  135 | }
+      | ^
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:132:7: error: control reaches end of non-void function [-Werror=return-type]
+  132 |       }
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+8ccccd8
