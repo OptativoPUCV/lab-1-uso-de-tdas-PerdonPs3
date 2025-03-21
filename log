@@ -21,3 +21,16 @@ Fri 21 Mar 2025 08:59:06 PM UTC:
  tests:  1|4
 total_score: 10/70
 6b0e0fb
+Fri 21 Mar 2025 09:01:27 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:47:21: error: expected expression before ‘int’
+   47 |       int* dato = (*int) malloc(sizeof(int));
+      |                     ^~~
+exercises.c:47:26: error: expected ‘,’ or ‘;’ before ‘malloc’
+   47 |       int* dato = (*int) malloc(sizeof(int));
+      |                          ^~~~~~
+Compilation failed
+81b2d2c
