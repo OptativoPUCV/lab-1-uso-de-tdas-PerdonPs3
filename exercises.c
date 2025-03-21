@@ -125,7 +125,7 @@ int parentesisBalanceados(char *cadena) {
       }
       else if(cadena[k] == ')' || cadena[k] == ']' || cadena[k] == '}'){// si la cadena contiene alguno de estos parentesis.
          char* elemento = top(pila);// guardamos el elemento de la pila mas alto para comprobar si el siguiente es el mismo pero cerrado. [{()}]
-         if(tope == NULL) return 0;// significa que no ingreso ningun parentesis.
+         if(elemento == NULL) return 0;// significa que no ingreso ningun parentesis.
          if(cadena[k] == ')' && *elemento != '(' ||cadena[k] == '[' && *elemento != ']' ||cadena[k] == '{' && *elemento != '}')return 0; // si el elemento de la pila es distinto al parentesis del caracter que se esta evaluando no es balanceado.
          pop(pila);// eliminamos el primer elemento para comparar con el siguiente. [{( --> [{ ]} X
          }
