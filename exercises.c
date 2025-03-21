@@ -116,20 +116,20 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   Stack* pila = create_stack();
-   for(int k = 0; cadena[k] != '\0'; k++)
-      if((cadena[k] == '[') || (cadena[k] == '{') || (cadena[k] == '(')){ 
-         char* dato = (char*) malloc(sizeof(char));
-         *dato = cadena[k];
-         push(pila, dato);
+   Stack* pila = create_stack();// se crea pila.
+   for(int k = 0; cadena[k] != '\0'; k++)// recorremos la cadena.
+      if((cadena[k] == '[') || (cadena[k] == '{') || (cadena[k] == '(')){ // si la cadena tiene un abre parentesis.
+         char* dato = (char*) malloc(sizeof(char));// se almacena memoria.
+         *dato = cadena[k];// se guarda el caracter en dato.
+         push(pila, dato);// agregamos el caracter a la pila.
       }
-      else if((cadena[k] == ']' )|| (cadena[k] == '}') || (cadena[k] == ')')){
-         char* elemento = top(pila);
-         if(elemento == NULL) return 0;
-         if((cadena[k] == ']' && *elemento != '[') ||(cadena[k] == '}' && *elemento != '{') ||(cadena[k] == '(' && *elemento != ')'))return 0; 
-         pop(pila);
+      else if((cadena[k] == ']' )|| (cadena[k] == '}') || (cadena[k] == ')')){// si el caracter es un cierre parentesis.
+         char* elemento = top(pila);// se guarda el elemento top de la pila para comparar.
+         if(elemento == NULL) return 0; // si no ingreso ningun parentesis se detiene el proceso.
+         if((cadena[k] == ']' && *elemento != '[') ||(cadena[k] == '}' && *elemento != '{') ||(cadena[k] == '(' && *elemento != ')'))return 0;// verifica si el parentesis es incorrecto retornando 0; 
+         pop(pila);// en todo otro caso se elimina el primer caracter de la pila, para continuar con el siguiente, y asi saber si es balanceado.
          }
-if(top(pila) == NULL)return 1;  
-return 0;
+if(top(pila) == NULL)return 1;// si la pila quedo vacia indica que el procedimiento fue correcto y es balanceado.
+return 0;// no es balanceado.
 }
 
