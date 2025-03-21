@@ -211,3 +211,31 @@ exercises.c:132:7: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 eae7fe3
+Fri 21 Mar 2025 10:36:41 PM UTC: 
+ exercises.c | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:129:30: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  129 |          if(cadena[k] == ']' && *elemento != '[' ||cadena[k] == '}' && *elemento != '{' ||cadena[k] == '(' && *elemento != ')')return 0;
+      |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+exercises.c:129:108: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  129 |          if(cadena[k] == ']' && *elemento != '[' ||cadena[k] == '}' && *elemento != '{' ||cadena[k] == '(' && *elemento != ')')return 0;
+      |                                                                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+exercises.c: At top level:
+exercises.c:133:1: error: expected identifier or ‘(’ before ‘if’
+  133 | if(top(pila) == NULL)return 1;
+      | ^~
+exercises.c:134:1: error: expected identifier or ‘(’ before ‘return’
+  134 | return 0;
+      | ^~~~~~
+exercises.c:135:1: error: expected identifier or ‘(’ before ‘}’ token
+  135 | }
+      | ^
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:132:7: error: control reaches end of non-void function [-Werror=return-type]
+  132 |       }
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+85ef02c
