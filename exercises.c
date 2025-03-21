@@ -42,11 +42,11 @@ Al finalizar retorna la lista creada.
 */
 
 List* crea_lista() {
-   List* L = create_list();// crea la lista
-   for(int k = 1; k <= 10; k++){ //sabemos que son 10 elementos asique creamos un for
-      int* dato = (int*) malloc(sizeof(int));// se hace reserva de memoria
-      *dato = k; // le asignamos el valor de k
-      pushFront(L, dato);// ingresamos el dato a la lista
+   List* L = create_list();// crea la lista.
+   for(int k = 1; k <= 10; k++){ //sabemos que son 10 elementos asique creamos un for.
+      int* dato = (int*) malloc(sizeof(int));// se hace reserva de memoria.
+      *dato = k; // le asignamos el valor de k.
+      pushFront(L, dato);// ingresamos el dato a la lista.
    }
    return L;
 }
@@ -57,11 +57,11 @@ Crea una función que reciba una lista de enteros (int*) y
 retorne la suma de sus elementos.
 */
 int sumaLista(List *L) {
-   int suma = 0;
-   int* elemento = first(L);
-   while(elemento != NULL){
-      suma += *elemento;
-      elemento = next(L);
+   int suma = 0;// se crea variable que guardara la suma de los elementos.
+   int* elemento = first(L);// asignamos variable centinela que guarda el primer elemento de la lista.
+   while(elemento != NULL){// inicializamos el ciclo infinito controlado.
+      suma += *elemento;// sumamos los elementos.
+      elemento = next(L);// cambiamos el valor del elemento al siguiente de la lista.
    }
    return suma;
 }
