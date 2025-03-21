@@ -110,3 +110,9 @@ exercises.c:107:7: error: ‘dato’ undeclared (first use in this function)
 exercises.c:107:7: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 b6c710f
+Fri 21 Mar 2025 09:24:36 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+1693056
