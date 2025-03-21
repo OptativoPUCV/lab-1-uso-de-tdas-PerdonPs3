@@ -76,7 +76,14 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-
+   int* elemento = first(L);
+   while(elemento != NULL){
+      if(*elemento == elem){
+         popCurrent(L);
+         elemento = first(L);
+      }
+      else elemento = next(L);
+   }
 }
 
 /*
@@ -87,6 +94,18 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+   Stack* aux = create_stack();
+   
+   while(top(P1) != NULL){
+      push(aux, top(P1));
+      pop(P1);
+   }
+   
+   while(top(aux) != NULL){
+      push(P2, top(aux));
+      push(P1, top(aux));
+      pop(aux);
+   }
 }
 
 /*
@@ -97,6 +116,21 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+   Stack* pila = create_stack();// creamos la pila.
+   for(int k = 0; cadena[k] != '\0'; k++)// recorremos la cadena.
+      if(cadena[k] == '[' || cadena[k] == '{' || cadena[k] == '('){// si la cadena contiene alguno de estos parentesis.
+         char* dato = (char*) malloc(sizeof(char));// reservamos memoria.
+         *dato = cadena[k];// asignamos el caracter a nuestra variable dato.
+         push(pila, dato);// ingresamos el dato a la pila.
+      }
+      else if(cadena[k] == ']' || cadena[k] == '}' || cadena[k] == ')'){// si la cadena contiene alguno de estos parentesis.
+         char* elemento = top(pila);// guardamos el elemento de la pila mas alto para comprobar si el siguiente es el mismo pero cerrado. [{()}]
+         if(elemento == NULL) return 0;// significa que no ingreso ningun parentesis.
+         if(cadena[k] == ']' && *elemento != '[' ||cadena[k] == '}' && *elemento != '{' ||cadena[k] == '(' && *elemento != ')')return 0; // si el elemento de la pila es distinto al parentesis del caracter que se esta evaluando no es balanceado.
+         pop(pila);// eliminamos el primer elemento para comparar con el siguiente. [{( --> [{ ]} X
+         }
+      }
+if(top(pila) == NULL)return 1;// significa que verifico todos los datos guardados en la pila y no queda ninguno por revisar, y que por lo tanto es balanceado.   
+return 0;// no es balanceado.
 }
 
