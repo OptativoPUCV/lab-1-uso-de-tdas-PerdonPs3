@@ -44,7 +44,7 @@ Al finalizar retorna la lista creada.
 List* crea_lista() {
    List* L = create_list();
    for(int k = 1; k <= 10; k++){ 
-      int* dato = (*int) malloc(sizeof(int));
+      int* dato = (int*) malloc(sizeof(int));
       *dato = k;
       pushFront(L, dato);
    } 
